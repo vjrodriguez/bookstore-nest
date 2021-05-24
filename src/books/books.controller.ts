@@ -7,11 +7,11 @@ import {
   Query,
   Delete,
 } from '@nestjs/common';
-import { BookService } from './books.service';
-import { CreateBookDTO } from './dto/create-book.CreateBookDTO';
+import { BooksService } from './books.service';
+import { CreateBookDTO } from './dto/create-book.dto';
 @Controller('books')
 export class BooksController {
-  constructor(private booksService: BookService) {}
+  constructor(private booksService: BooksService) {}
 
   @Get()
   async getBooks() {
@@ -26,8 +26,8 @@ export class BooksController {
   }
 
   @Post()
-  async addBook(@Body() CreateBookDTO: CreateBookDTO) {
-    const book = await this.booksService.addBook(CreateBookDTO);
+  async addBook(@Body() createBookDTO: CreateBookDTO) {
+    const book = await this.booksService.addBook(createBookDTO);
     return book;
   }
 
