@@ -27,6 +27,7 @@ export class BooksService {
   addBook(book): Promise<any> {
     return new Promise((resolve) => {
       this.books.push(book);
+      console.log('THIS.BOOKS: ', this.books, book);
       resolve(this.books);
     });
   }
