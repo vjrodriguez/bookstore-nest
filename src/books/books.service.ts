@@ -10,6 +10,7 @@ export class BooksService {
       resolve(this.books);
     });
   }
+
   // getBook(): Used to retrieve the details of a particular book by passing the bookID as a parameter.
   getBook(bookID): Promise<any> {
     const id = Number(bookID);
@@ -21,6 +22,7 @@ export class BooksService {
       resolve(book);
     });
   }
+
   // addBook(): Used to create and post a new book to the existing book list. And because we are not persisting into the database, the newly added book will only be held in memory.
   addBook(book): Promise<any> {
     return new Promise((resolve) => {
